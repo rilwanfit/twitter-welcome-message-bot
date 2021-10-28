@@ -3,7 +3,7 @@ const my_user_name = require("../config").userName;
 const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
 
 const AutoDM = () => {
-  const stream = T.stream("user");
+  var stream = T.stream('statuses/filter', { track: '@' + my_user_name });
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
@@ -15,6 +15,7 @@ const SendMessage = user => {
     screen_name,
     text: GenerateMessage(name)
   };
+
   // the follow stream track if I follow author person too.
   if (screen_name != my_user_name) {
     console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
