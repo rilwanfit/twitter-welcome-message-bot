@@ -9,6 +9,7 @@
   "author": "Youssouf El AZIZI",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "twit": "^2.2.9"
   }
 }
